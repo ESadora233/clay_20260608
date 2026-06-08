@@ -1,0 +1,11 @@
+# 运行时截图
+runtime/
+
+# 本地下载的 adb（运行 scripts/setup_adb.ps1 生成）
+tools/platform-tools/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/

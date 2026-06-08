@@ -1,0 +1,103 @@
+adb:
+  executable: ''
+  host: 127.0.0.1
+  port: 5555
+  serial: 127.0.0.1:5555
+capture:
+  mode: window
+  window_titles:
+  - 地下城
+  - 勇士
+  - 应用宝
+  - Androws
+  - 腾讯
+  window_rect: []
+  adb_fallback_to_window: true
+  blank_threshold: 1.0
+  temp_dir: runtime/screenshots
+input:
+  mode: hybrid
+  pc_method: physical
+  # keyboard=方向键移动+W键技能 | mouse=轮盘滑动+点击技能 | custom=手动配 movement/dungeon
+  emulator_mode: mouse
+matcher:
+  threshold: 0.85
+  templates_dir: assets/templates
+runtime:
+  action_delay: 0.5
+  wait_timeout: 10.0
+  poll_interval: 0.5
+logging:
+  level: INFO
+fatigue:
+  enabled: true
+  stop_at: 0
+  region:
+  - 0.08
+  - 0.05
+  - 0.08
+  - 0.1
+movement:
+  # emulator_mode 会自动覆盖 method；custom 模式下才生效
+  method: swipe
+  swipe_from:
+  - 0.15
+  - 0.78
+  swipe_to:
+  - 0.45
+  - 0.78
+  swipe_times: 2
+  right_presses: 5
+  press_interval: 0.12
+  after_move_wait: 1.5
+dungeon:
+  after_enter_wait: 4.0
+  after_skill_wait: 1.5
+  battle_ready_timeout: 30.0
+  battle_ready_poll: 0.5
+  battle_ready_settle: 0.8
+  battle_step_delay: 0.8
+  unstuck_wait: 7.0
+  nudge_method: swipe
+  nudge_center:
+  - 0.25
+  - 0.75
+  nudge_delta: 0.08
+  nudge_interval: 0.15
+  skill_w_ratio:
+  - 0.4187
+  - 0.8804
+  skill_w_offset:
+  - 0.0
+  - -0.03
+  skill_method: tap
+  skill_tap_times: 2
+  skill_tap_interval: 0.15
+  use_skill_tap: true
+  use_skill_key: false
+  taps:
+    # 顶部状态栏齿轮（在迷你地图左侧，y 要很靠上，不要点到地图）
+    settings_gear:
+    - 0.835
+    - 0.028
+    unstuck:
+    - 0.70
+    - 0.82
+    settings_close:
+    - 0.78
+    - 0.18
+    return_town:
+    - 0.88
+    - 0.82
+    confirm_leave:
+    - 0.58
+    - 0.58
+    blocked_trial:
+    - 0.30
+    - 0.61
+    map_first:
+    - 0.15
+    - 0.38
+    start_battle:
+    - 0.82
+    - 0.88
